@@ -100,6 +100,7 @@ export default function About() {
           item.style.height = `${imageSize}px`;
           item.style.left = `${x}px`;
           item.style.top = `${y}px`;
+          item.style.visibility = "visible";
           item.style.opacity = "0";
           item.style.transform = "scale(0.8)";
 
