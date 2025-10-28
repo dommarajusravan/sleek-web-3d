@@ -59,10 +59,13 @@ export default function About() {
 
       const items = Array.from(gallery.querySelectorAll(".admin-item")) as HTMLElement[];
       const imageSize = window.innerWidth < 768 ? 140 : 180;
-      const margin = window.innerWidth < 768 ? 20 : 40;
+      const margin = window.innerWidth < 768 ? 30 : 50;
       const positions: { x: number; y: number }[] = [];
 
-      const estimatedHeight = Math.max(800, Math.ceil(items.length / 3) * (imageSize + margin * 2));
+      // Increase height to provide more space
+      const cols = window.innerWidth < 768 ? 2 : 3;
+      const rows = Math.ceil(items.length / cols);
+      const estimatedHeight = Math.max(1200, rows * (imageSize + margin * 3));
       gallery.style.minHeight = `${estimatedHeight}px`;
 
       const minX = margin;
@@ -74,7 +77,8 @@ export default function About() {
         return positions.some((pos) => {
           const dx = x - pos.x;
           const dy = y - pos.y;
-          return Math.sqrt(dx * dx + dy * dy) < imageSize + margin;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          return distance < imageSize + margin;
         });
       };
 
@@ -83,8 +87,10 @@ export default function About() {
           y = 0,
           isValidPosition = false;
         let attempts = 0;
+        const maxAttempts = 1000;
 
-        while (!isValidPosition && attempts < 500) {
+        // Try random positioning first
+        while (!isValidPosition && attempts < maxAttempts) {
           x = Math.random() * (maxX - minX) + minX;
           y = Math.random() * (maxY - minY) + minY;
 
@@ -95,22 +101,30 @@ export default function About() {
           attempts++;
         }
 
-        if (isValidPosition) {
-          item.style.width = `${imageSize}px`;
-          item.style.height = `${imageSize}px`;
-          item.style.left = `${x}px`;
-          item.style.top = `${y}px`;
-          item.style.visibility = "visible";
-          item.style.opacity = "0";
-          item.style.transform = "scale(0.8)";
-
-          // Animate in with delay
-          setTimeout(() => {
-            item.style.transition = "all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          }, index * 100);
+        // Fallback to grid positioning if random fails
+        if (!isValidPosition) {
+          const col = index % cols;
+          const row = Math.floor(index / cols);
+          x = minX + col * (imageSize + margin * 2);
+          y = minY + row * (imageSize + margin * 2);
+          positions.push({ x, y });
         }
+
+        // Always position and show the item
+        item.style.width = `${imageSize}px`;
+        item.style.height = `${imageSize}px`;
+        item.style.left = `${x}px`;
+        item.style.top = `${y}px`;
+        item.style.visibility = "visible";
+        item.style.opacity = "0";
+        item.style.transform = "scale(0.8)";
+
+        // Animate in with delay
+        setTimeout(() => {
+          item.style.transition = "all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
+        }, index * 100);
       });
     };
 
