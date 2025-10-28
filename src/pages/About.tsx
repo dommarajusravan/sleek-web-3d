@@ -6,18 +6,24 @@ import { Users, Target, Heart, Award } from "lucide-react";
 
 // Admin/Committee members data
 const admins = [
-  { name: "Rajesh Kumar", role: "President", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh" },
-  { name: "Priya Sharma", role: "Vice President", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya" },
-  { name: "Venkat Reddy", role: "Secretary", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Venkat" },
-  { name: "Lakshmi Devi", role: "Treasurer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lakshmi" },
-  { name: "Srinivas Rao", role: "Cultural Coordinator", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Srinivas" },
-  { name: "Anjali Patel", role: "Events Manager", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anjali" },
-  { name: "Krishna Murthy", role: "Youth Director", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Krishna" },
-  { name: "Suma Reddy", role: "Communications", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Suma" },
-  { name: "Ramesh Babu", role: "Sponsorship Lead", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ramesh" },
-  { name: "Kavita Menon", role: "Volunteer Coordinator", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kavita" },
-  { name: "Arun Kumar", role: "Technical Lead", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Arun" },
-  { name: "Divya Singh", role: "Social Media Manager", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Divya" },
+  { name: "Phani Varma", role: "Committee Member", image: "/admin-images/phani.webp" },
+  { name: "Sravan Dommaraju", role: "Committee Member", image: "/admin-images/sravan.webp" },
+  { name: "Balaji", role: "Committee Member", image: "/admin-images/balaji.webp" },
+  { name: "Sreeram", role: "Committee Member", image: "/admin-images/sreeram.webp" },
+  { name: "Srihari", role: "Committee Member", image: "/admin-images/srihari.webp" },
+  { name: "Dr Srikanth", role: "Committee Member", image: "/admin-images/srikanth.webp" },
+  { name: "Sunil", role: "Committee Member", image: "/admin-images/sunil.webp" },
+  { name: "Madhava Rao", role: "Committee Member", image: "/admin-images/madhav.webp" },
+  { name: "Rupesh", role: "Committee Member", image: "/admin-images/rupesh.webp" },
+  { name: "Nandu", role: "Committee Member", image: "/admin-images/nandu.webp" },
+  { name: "CR Naidu", role: "Committee Member", image: "/admin-images/naidu.webp" },
+  { name: "Bramha", role: "Committee Member", image: "/admin-images/bramha.webp" },
+  { name: "Jampana Shyam Sundara Rama Raju", role: "Committee Member", image: "/admin-images/shyam.webp" },
+  { name: "Jagadeesh", role: "Committee Member", image: "/admin-images/jagadesh.webp" },
+  { name: "Naveen", role: "Committee Member", image: "/admin-images/naveen.webp" },
+  { name: "Sirish", role: "Committee Member", image: "/admin-images/sirish.webp" },
+  { name: "Karunakar Reddy", role: "Committee Member", image: "/admin-images/karna.webp" },
+  { name: "Karthik", role: "Committee Member", image: "/admin-images/karthik.webp" },
 ];
 
 const values = [
