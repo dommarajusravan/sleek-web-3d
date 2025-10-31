@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const events = [
   {
@@ -30,9 +31,66 @@ const events = [
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
     color: "from-blue-500 to-cyan-600",
   },
+  {
+    title: "Diwali Celebration 2025",
+    date: "October 20, 2025",
+    time: "5:00 PM - 10:00 PM",
+    location: "Southend Community Center",
+    description: "Festival of lights celebration with traditional diyas, fireworks, and cultural performances",
+    image: "https://images.unsplash.com/photo-1605649487272-5fd5c23f1d99?w=800&q=80",
+    color: "from-yellow-500 to-orange-600",
+  },
+  {
+    title: "Telugu Language Workshop",
+    date: "August 10, 2025",
+    time: "2:00 PM - 5:00 PM",
+    location: "STA Learning Center",
+    description: "Interactive Telugu language learning sessions for children and adults",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+    color: "from-green-500 to-teal-600",
+  },
+  {
+    title: "Traditional Dance Showcase",
+    date: "September 5, 2025",
+    time: "6:00 PM - 9:00 PM",
+    location: "Southend Theatre",
+    description: "Experience classical Kuchipudi and Bharatanatyam performances by renowned artists",
+    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=800&q=80",
+    color: "from-pink-500 to-rose-600",
+  },
+  {
+    title: "Community Picnic Day",
+    date: "June 20, 2025",
+    time: "10:00 AM - 4:00 PM",
+    location: "Southend Beach Park",
+    description: "Family-friendly outdoor event with games, food, and fun activities for everyone",
+    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&q=80",
+    color: "from-cyan-500 to-blue-600",
+  },
+  {
+    title: "Bonalu Festival",
+    date: "July 28, 2025",
+    time: "4:00 PM - 9:00 PM",
+    location: "STA Community Hall",
+    description: "Traditional Telangana festival with processions, music, and colorful celebrations",
+    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+    color: "from-red-500 to-pink-600",
+  },
+  {
+    title: "Kids Talent Show",
+    date: "November 15, 2025",
+    time: "3:00 PM - 7:00 PM",
+    location: "Southend Arts Center",
+    description: "Showcase of talented young performers with music, dance, and drama performances",
+    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80",
+    color: "from-indigo-500 to-purple-600",
+  },
 ];
 
 export const Events = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedEvents = showAll ? events : events.slice(0, 3);
+
   return (
     <section className="py-24 px-4 bg-gradient-to-br from-background to-muted/50 relative overflow-hidden">
       {/* Animated Background */}
@@ -60,7 +118,7 @@ export const Events = () => {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {events.map((event, index) => (
+          {displayedEvents.map((event, index) => (
             <Card
               key={index}
               className="group relative overflow-hidden border-2 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 animate-slide-up"
@@ -126,9 +184,10 @@ export const Events = () => {
           <Button 
             size="lg"
             variant="outline"
+            onClick={() => setShowAll(!showAll)}
             className="border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
           >
-            View All Events
+            {showAll ? "Show Less" : "View All Events"}
             <Calendar className="ml-2 w-5 h-5" />
           </Button>
         </div>
