@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -13,11 +13,48 @@ const navItems = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => {
     if (path === "/") return location.pathname === "/";
     return location.pathname === path;
   };
+
+  const handleNavClick = (path: string) => {
+    if (path.includes("#")) {
+      const [route, hash] = path.split("#");
+      if (location.pathname !== route) {
+        navigate(route);
+        setTimeout(() => {
+          document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setIsOpen(false);
+  };
+
+  const handleJoinNow = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.substring(1);
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border shadow-sm">
@@ -37,9 +74,11 @@ export const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link key={item.path} to={item.path}>
+              item.path.includes("#") ? (
                 <Button
+                  key={item.path}
                   variant="ghost"
+                  onClick={() => handleNavClick(item.path)}
                   className={`relative px-4 py-2 transition-all ${
                     isActive(item.path)
                       ? "text-primary font-semibold"
@@ -51,9 +90,25 @@ export const Navbar = () => {
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
                   )}
                 </Button>
-              </Link>
+              ) : (
+                <Link key={item.path} to={item.path}>
+                  <Button
+                    variant="ghost"
+                    className={`relative px-4 py-2 transition-all ${
+                      isActive(item.path)
+                        ? "text-primary font-semibold"
+                        : "text-foreground hover:text-primary"
+                    }`}
+                  >
+                    {item.name}
+                    {isActive(item.path) && (
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+                    )}
+                  </Button>
+                </Link>
+              )
             ))}
-            <Button className="ml-4 bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/50 transition-all">
+            <Button onClick={handleJoinNow} className="ml-4 bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/50 transition-all">
               Join Now
             </Button>
           </div>
@@ -73,13 +128,11 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4 space-y-2 animate-slide-up">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-              >
+              item.path.includes("#") ? (
                 <Button
+                  key={item.path}
                   variant="ghost"
+                  onClick={() => handleNavClick(item.path)}
                   className={`w-full justify-start ${
                     isActive(item.path)
                       ? "bg-primary/10 text-primary font-semibold"
@@ -88,9 +141,26 @@ export const Navbar = () => {
                 >
                   {item.name}
                 </Button>
-              </Link>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Button
+                    variant="ghost"
+                    className={`w-full justify-start ${
+                      isActive(item.path)
+                        ? "bg-primary/10 text-primary font-semibold"
+                        : "text-foreground"
+                    }`}
+                  >
+                    {item.name}
+                  </Button>
+                </Link>
+              )
             ))}
-            <Button className="w-full bg-gradient-to-r from-primary to-primary-glow">
+            <Button onClick={handleJoinNow} className="w-full bg-gradient-to-r from-primary to-primary-glow">
               Join Now
             </Button>
           </div>
