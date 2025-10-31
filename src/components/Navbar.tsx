@@ -57,60 +57,73 @@ export const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-card/95 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-primary/5">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src="/images/STA-logo.webp" 
-              alt="STA Logo" 
-              className="w-14 h-14 object-contain group-hover:scale-105 transition-transform"
-            />
-            <div className="hidden md:block">
-              <div className="font-bold text-base leading-tight text-foreground">SOUTHEND TELUGU ASSOCIATION</div>
-              <div className="text-sm text-muted-foreground font-medium" style={{ fontFamily: 'Noto Sans Telugu, sans-serif' }}>సౌతెండ్ తెలుగు అసోసియేషన్</div>
+          <Link to="/" className="flex items-center gap-4 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20 blur-xl group-hover:opacity-30 transition-opacity rounded-full" />
+              <img 
+                src="/images/STA-logo.webp" 
+                alt="STA Logo" 
+                className="w-16 h-16 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="hidden lg:block">
+              <div className="font-bold text-sm tracking-wider text-foreground group-hover:text-primary transition-colors leading-tight">
+                SOUTHEND TELUGU ASSOCIATION
+              </div>
+              <div 
+                className="text-base text-primary/80 font-semibold mt-0.5 group-hover:text-secondary transition-colors" 
+                style={{ fontFamily: 'Noto Sans Telugu, sans-serif' }}
+              >
+                సౌతెండ్ తెలుగు అసోసియేషన్
+              </div>
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
               item.path.includes("#") ? (
                 <Button
                   key={item.path}
                   variant="ghost"
                   onClick={() => handleNavClick(item.path)}
-                  className={`relative px-4 py-2 transition-all ${
+                  className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                     isActive(item.path)
-                      ? "text-primary font-semibold"
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:text-primary hover:bg-muted"
                   }`}
                 >
                   {item.name}
                   {isActive(item.path) && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-primary via-primary-glow to-secondary rounded-full" />
                   )}
                 </Button>
               ) : (
                 <Link key={item.path} to={item.path}>
                   <Button
                     variant="ghost"
-                    className={`relative px-4 py-2 transition-all ${
+                    className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                       isActive(item.path)
-                        ? "text-primary font-semibold"
-                        : "text-foreground hover:text-primary"
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:text-primary hover:bg-muted"
                     }`}
                   >
                     {item.name}
                     {isActive(item.path) && (
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-primary via-primary-glow to-secondary rounded-full" />
                     )}
                   </Button>
                 </Link>
               )
             ))}
-            <Button onClick={handleJoinNow} className="ml-4 bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/50 transition-all">
+            <Button 
+              onClick={handleJoinNow} 
+              className="ml-4 px-6 py-2 bg-gradient-to-r from-primary via-primary-glow to-secondary hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300 font-semibold"
+            >
               Join Now
             </Button>
           </div>
@@ -119,26 +132,26 @@ export const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden hover:bg-primary/10 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className="w-6 h-6 text-primary" />}
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-2 animate-slide-up">
+          <div className="md:hidden py-6 space-y-3 animate-fade-in border-t border-border/50">
             {navItems.map((item) => (
               item.path.includes("#") ? (
                 <Button
                   key={item.path}
                   variant="ghost"
                   onClick={() => handleNavClick(item.path)}
-                  className={`w-full justify-start ${
+                  className={`w-full justify-start text-base font-medium transition-all duration-300 rounded-lg ${
                     isActive(item.path)
-                      ? "bg-primary/10 text-primary font-semibold"
-                      : "text-foreground"
+                      ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary"
+                      : "text-foreground hover:bg-muted"
                   }`}
                 >
                   {item.name}
@@ -151,10 +164,10 @@ export const Navbar = () => {
                 >
                   <Button
                     variant="ghost"
-                    className={`w-full justify-start ${
+                    className={`w-full justify-start text-base font-medium transition-all duration-300 rounded-lg ${
                       isActive(item.path)
-                        ? "bg-primary/10 text-primary font-semibold"
-                        : "text-foreground"
+                        ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary"
+                        : "text-foreground hover:bg-muted"
                     }`}
                   >
                     {item.name}
@@ -162,7 +175,10 @@ export const Navbar = () => {
                 </Link>
               )
             ))}
-            <Button onClick={handleJoinNow} className="w-full bg-gradient-to-r from-primary to-primary-glow">
+            <Button 
+              onClick={handleJoinNow} 
+              className="w-full mt-4 bg-gradient-to-r from-primary via-primary-glow to-secondary hover:shadow-lg hover:shadow-primary/30 transition-all font-semibold"
+            >
               Join Now
             </Button>
           </div>
