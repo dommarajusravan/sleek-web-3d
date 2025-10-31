@@ -62,12 +62,14 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-              <span className="text-white font-bold text-xl">STA</span>
-            </div>
+            <img 
+              src="/images/STA-logo.webp" 
+              alt="STA Logo" 
+              className="w-14 h-14 object-contain group-hover:scale-105 transition-transform"
+            />
             <div className="hidden md:block">
-              <div className="font-bold text-lg text-foreground">Southend Telugu</div>
-              <div className="text-xs text-muted-foreground">Association</div>
+              <div className="font-bold text-base leading-tight text-foreground">SOUTHEND TELUGU ASSOCIATION</div>
+              <div className="text-sm text-muted-foreground font-medium" style={{ fontFamily: 'Noto Sans Telugu, sans-serif' }}>సౌతెండ్ తెలుగు అసోసియేషన్</div>
             </div>
           </Link>
 
