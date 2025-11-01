@@ -51,6 +51,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-secondary hover:bg-secondary/90 text-white px-8 py-6 text-lg rounded-xl shadow-2xl hover:shadow-secondary/50 transition-all duration-300 hover:scale-105 group"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Join STA Today
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -59,6 +60,7 @@ export const Hero = () => {
               size="lg" 
               variant="outline"
               className="bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white hover:bg-white/20 px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
+              onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explore Events
             </Button>
