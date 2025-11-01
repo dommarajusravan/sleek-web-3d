@@ -1,7 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowRight, History } from "lucide-react";
 import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const events = [
   {
@@ -89,7 +90,15 @@ const events = [
 
 export const Events = () => {
   const [showAll, setShowAll] = useState(false);
-  const displayedEvents = showAll ? events : events.slice(0, 3);
+  const [eventType, setEventType] = useState<"upcoming" | "previous">("upcoming");
+
+  const currentDate = new Date();
+  
+  const upcomingEvents = events.filter(event => new Date(event.date) >= currentDate);
+  const previousEvents = events.filter(event => new Date(event.date) < currentDate);
+  
+  const selectedEvents = eventType === "upcoming" ? upcomingEvents : previousEvents;
+  const displayedEvents = showAll ? selectedEvents : selectedEvents.slice(0, 3);
 
   return (
     <section className="py-24 px-4 bg-gradient-to-br from-background to-muted/50 relative overflow-hidden">
@@ -101,10 +110,10 @@ export const Events = () => {
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary">
             <Calendar className="w-4 h-4" />
-            <span className="text-sm font-semibold">Upcoming Events</span>
+            <span className="text-sm font-semibold">Our Events</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
@@ -114,6 +123,23 @@ export const Events = () => {
           <p className="text-lg text-muted-foreground">
             Experience the vibrancy of Telugu culture through our exciting events
           </p>
+          
+          {/* Event Type Toggle */}
+          <Tabs value={eventType} onValueChange={(value) => {
+            setEventType(value as "upcoming" | "previous");
+            setShowAll(false);
+          }} className="mx-auto">
+            <TabsList className="grid w-full max-w-md grid-cols-2 h-12">
+              <TabsTrigger value="upcoming" className="text-sm font-semibold">
+                <Calendar className="w-4 h-4 mr-2" />
+                Upcoming Events ({upcomingEvents.length})
+              </TabsTrigger>
+              <TabsTrigger value="previous" className="text-sm font-semibold">
+                <History className="w-4 h-4 mr-2" />
+                Previous Events ({previousEvents.length})
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
 
         {/* Events Grid */}
@@ -180,17 +206,27 @@ export const Events = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
-          <Button 
-            size="lg"
-            variant="outline"
-            onClick={() => setShowAll(!showAll)}
-            className="border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
-          >
-            {showAll ? "Show Less" : "View All Events"}
-            <Calendar className="ml-2 w-5 h-5" />
-          </Button>
-        </div>
+        {selectedEvents.length > 3 && (
+          <div className="text-center mt-12">
+            <Button 
+              size="lg"
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              className="border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
+            >
+              {showAll ? "Show Less" : `View All ${eventType === "upcoming" ? "Upcoming" : "Previous"} Events`}
+              <Calendar className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        )}
+        
+        {selectedEvents.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-lg text-muted-foreground">
+              No {eventType} events at the moment.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
