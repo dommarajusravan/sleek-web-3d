@@ -75,7 +75,7 @@ export const Navbar = () => {
                 SOUTHEND TELUGU ASSOCIATION
               </div>
               <div 
-                className="text-base text-primary/80 font-semibold mt-0.5 group-hover:text-secondary transition-colors" 
+                className="text-base text-orange-700 font-bold mt-0.5 group-hover:text-orange-600 transition-colors" 
                 style={{ fontFamily: 'Noto Sans Telugu, sans-serif' }}
               >
                 సౌతెండ్ తెలుగు అసోసియేషన్
