@@ -70,8 +70,8 @@ export const Hero = () => {
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
             {[
               { value: "500+", label: "Members" },
-              { value: "50+", label: "Events Yearly" },
-              { value: "10+", label: "Years Active" },
+              { value: "5+", label: "Events Yearly" },
+              { value: "5+", label: "Years Active" },
             ].map((stat, index) => (
               <div 
                 key={index} 
