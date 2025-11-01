@@ -36,7 +36,7 @@ export const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
             Southend Telugu
-            <span className="block mt-2 bg-gradient-to-r from-accent via-secondary-glow to-accent bg-clip-text text-transparent animate-glow">
+            <span className="block mt-2 bg-gradient-to-r from-accent via-secondary-glow to-accent bg-clip-text text-transparent">
               Association
             </span>
           </h1>
