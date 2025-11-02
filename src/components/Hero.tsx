@@ -39,7 +39,7 @@ export const Hero = () => {
             <span className="block mt-2 bg-gradient-to-r from-accent via-secondary-glow to-accent bg-clip-text text-transparent">
               Association
             </span>
-            <span className="block mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-red-900">
+            <span className="block mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
               సౌతెండ్ తెలుగు అసోసియేషన్
             </span>
           </h1>
