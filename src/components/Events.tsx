@@ -77,15 +77,6 @@ const events = [
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
     color: "from-red-500 to-pink-600",
   },
-  {
-    title: "Kids Talent Show",
-    date: "November 15, 2025",
-    time: "3:00 PM - 7:00 PM",
-    location: "Southend Arts Center",
-    description: "Showcase of talented young performers with music, dance, and drama performances",
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80",
-    color: "from-indigo-500 to-purple-600",
-  },
 ];
 
 export const Events = () => {
