@@ -6,12 +6,12 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const events = [
   {
-    title: "Sankranti Festival 2025",
-    date: "January 14, 2025",
-    time: "10:00 AM - 6:00 PM",
-    location: "Southend Community Center",
-    description: "Celebrate the harvest festival with traditional rangoli, bhogi mantalu, and cultural performances",
-    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80",
+    title: "Sankranthi Festival Event 2026",
+    date: "January 18, 2026",
+    time: "11:00 AM - 5:00 PM",
+    location: "Runnymede hall",
+    description: "Let this Sankranti bring harmony, wealth, and endless reasons to smile.",
+    image: "/images/sankranthi-2026.png",
     color: "from-orange-500 to-amber-600",
   },
   {
