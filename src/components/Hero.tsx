@@ -35,9 +35,8 @@ export const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
-            Southend Telugu
-            <span className="block mt-2 bg-gradient-to-r from-accent via-secondary-glow to-accent bg-clip-text text-transparent">
-              Association
+            <span className="bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
+              Southend Telugu Association
             </span>
             <span className="block mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
               సౌతెండ్ తెలుగు అసోసియేషన్
