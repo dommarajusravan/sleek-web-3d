@@ -25,7 +25,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-20 pt-32">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-slide-up">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white">
@@ -34,11 +34,11 @@ export const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
-            <span className="bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            <span className="whitespace-nowrap bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
               Southend Telugu Association
             </span>
-            <span className="block mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
+            <span className="block mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
               సౌతెండ్ తెలుగు అసోసియేషన్
             </span>
           </h1>
