@@ -57,7 +57,7 @@ export const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-card/95 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-primary/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-background via-card to-background backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/10">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
@@ -70,12 +70,12 @@ export const Navbar = () => {
                 className="w-16 h-16 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex flex-col justify-center gap-1">
               <div className="font-bold text-sm tracking-wider text-foreground group-hover:text-primary transition-colors leading-tight">
                 SOUTHEND TELUGU ASSOCIATION
               </div>
               <div 
-                className="text-base text-orange-700 font-bold mt-0.5 group-hover:text-orange-600 transition-colors" 
+                className="text-sm font-semibold text-secondary group-hover:text-secondary-glow transition-colors leading-tight" 
                 style={{ fontFamily: 'Noto Sans Telugu, sans-serif' }}
               >
                 సౌతెండ్ తెలుగు అసోసియేషన్
