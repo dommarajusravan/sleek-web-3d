@@ -70,7 +70,7 @@ export const Navbar = () => {
                 className="w-16 h-16 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div className="hidden lg:flex flex-col justify-center items-start gap-1">
+            <div className="hidden lg:flex flex-col justify-center items-center gap-1">
               <div className="font-bold text-sm tracking-wider text-foreground group-hover:text-primary transition-colors leading-tight">
                 SOUTHEND TELUGU ASSOCIATION
               </div>
