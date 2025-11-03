@@ -27,7 +27,7 @@ const events = [
     title: "Women's and Kid's Badminton Tournament 2025",
     date: "June 1, 2025",
     time: "12:00 PM - 4:00 PM",
-    location: "Chase High School, Shoeburyness",
+    location: "Shoeburyness Leisure Center",
     description: "Exciting badminton tournament for women and kids featuring doubles matches. Entry £5 per person. Organized by STA Women's Team",
     image: "/images/badminton-2025.png",
     color: "from-blue-500 to-pink-600",
@@ -159,6 +159,10 @@ export const Events = () => {
 
                 {/* CTA */}
                 <Button 
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="w-full mt-4 group/btn bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/50 transition-all"
                 >
                   Learn More
