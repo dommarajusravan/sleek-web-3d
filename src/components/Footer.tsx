@@ -1,57 +1,14 @@
-import { Heart, Facebook, Instagram, Mail, Phone, Youtube, MessageCircle } from "lucide-react";
+import { Heart, Mail, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-foreground to-primary py-12 px-4">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* About Section */}
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold text-white mb-2">Southend Telugu Association</h3>
             <p className="text-white/70 text-sm">Celebrating culture, building community</p>
-          </div>
-
-          {/* Follow Us Section */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-            <div className="flex items-center justify-center gap-4">
-              <a 
-                href="https://www.facebook.com/profile.php?id=61558150487748" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5 text-white" />
-              </a>
-              <a 
-                href="https://www.instagram.com/southendteluguassociation" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5 text-white" />
-              </a>
-              <a 
-                href="https://wa.me/447123456789" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-5 h-5 text-white" />
-              </a>
-              <a 
-                href="https://www.youtube.com/@southendteluguassociation" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5 text-white" />
-              </a>
-            </div>
           </div>
 
           {/* Contact Section */}
