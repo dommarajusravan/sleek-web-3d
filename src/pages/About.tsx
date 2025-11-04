@@ -141,7 +141,7 @@ export default function About() {
             About <span className="text-accent">STA</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Building bridges between tradition and modernity, bringing the Telugu community together in Southend since 2014
+            Building bridges between tradition and modernity, bringing the Telugu community together in Southend since 2024
           </p>
         </div>
       </section>
