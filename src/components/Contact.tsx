@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Facebook, Instagram, MessageCircle } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -34,8 +34,8 @@ export const Contact = () => {
             {/* Contact Cards */}
             <div className="space-y-4">
               {[
-                { icon: Mail, title: "Email", content: "info@southendta.org", href: "mailto:info@southendta.org" },
-                { icon: Phone, title: "Phone", content: "+44 (0) 1234 567890", href: "tel:+441234567890" },
+                { icon: Mail, title: "Email", content: "southendteluguassociation@gmail.com", href: "mailto:southendteluguassociation@gmail.com" },
+                { icon: Phone, title: "Phone", content: "+44 (0) 7449044513", href: "tel:+4474490445130" },
                 { icon: MapPin, title: "Location", content: "Southend-on-Sea, Essex, UK", href: "#" },
               ].map((item, index) => (
                 <a
@@ -59,10 +59,9 @@ export const Contact = () => {
               <h3 className="text-xl font-bold text-white">Follow Us</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61558150487748", color: "hover:bg-blue-600" },
-                  { icon: Instagram, href: "https://www.instagram.com/southendteluguassociation", color: "hover:bg-pink-600" },
-                  { icon: MessageCircle, href: "https://wa.me/447123456789", color: "hover:bg-green-600" },
-                  { icon: Youtube, href: "https://www.youtube.com/@southendteluguassociation", color: "hover:bg-red-600" },
+                  { icon: Facebook, href: "https://www.facebook.com/share/1AbmamAaWJ/?mibextid=wwXIfr", color: "hover:bg-blue-600" },
+                  { icon: Instagram, href: "https://www.instagram.com/southend.telugu.association/", color: "hover:bg-pink-600" },
+                  { icon: MessageCircle, href: "https://chat.whatsapp.com/FrbMISYT8Xo8TzIChjL8sk", color: "hover:bg-green-600" },
                 ].map((social, index) => (
                   <a
                     key={index}
