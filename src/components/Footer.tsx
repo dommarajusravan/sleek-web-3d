@@ -1,4 +1,4 @@
-import { Heart, Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { Heart, Facebook, Instagram, Mail, Phone, Youtube, MessageCircle } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -32,6 +32,24 @@ export const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-white" />
+              </a>
+              <a 
+                href="https://wa.me/447123456789" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5 text-white" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@southendteluguassociation" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>
