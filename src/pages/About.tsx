@@ -6,24 +6,16 @@ import { Users, Target, Heart, Award } from "lucide-react";
 
 // Admin/Committee members data
 const admins = [
-  { name: "Phani Varma", role: "Committee Member", image: "/admin-images/phani.webp" },
   { name: "Sravan Dommaraju", role: "Committee Member", image: "/admin-images/sravan.webp" },
   { name: "Balaji", role: "Committee Member", image: "/admin-images/balaji.webp" },
-  { name: "Sreeram", role: "Committee Member", image: "/admin-images/sreeram.webp" },
   { name: "Srihari", role: "Committee Member", image: "/admin-images/srihari.webp" },
   { name: "Dr Srikanth", role: "Committee Member", image: "/admin-images/srikanth.webp" },
   { name: "Sunil", role: "Committee Member", image: "/admin-images/sunil.webp" },
-  { name: "Madhava Rao", role: "Committee Member", image: "/admin-images/madhav.webp" },
   { name: "Rupesh", role: "Committee Member", image: "/admin-images/rupesh.webp" },
   { name: "Nandu", role: "Committee Member", image: "/admin-images/nandu.webp" },
-  { name: "CR Naidu", role: "Committee Member", image: "/admin-images/naidu.webp" },
   { name: "Bramha", role: "Committee Member", image: "/admin-images/bramha.webp" },
-  { name: "Jampana Shyam Sundara Rama Raju", role: "Committee Member", image: "/admin-images/shyam.webp" },
-  { name: "Jagadeesh", role: "Committee Member", image: "/admin-images/jagadesh.webp" },
   { name: "Naveen", role: "Committee Member", image: "/admin-images/naveen.webp" },
-  { name: "Sirish", role: "Committee Member", image: "/admin-images/sirish.webp" },
   { name: "Karunakar Reddy", role: "Committee Member", image: "/admin-images/karna.webp" },
-  { name: "Karthik", role: "Committee Member", image: "/admin-images/karthik.webp" },
 ];
 
 const values = [
