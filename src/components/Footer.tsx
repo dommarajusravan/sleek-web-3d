@@ -15,13 +15,13 @@ export const Footer = () => {
           <div className="text-center md:text-right">
             <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
             <div className="space-y-2 text-white/70 text-sm">
-              <a href="mailto:sta.southend@gmail.com" className="flex items-center justify-center md:justify-end gap-2 hover:text-white transition-colors">
+              <a href="mailto:southendteluguassociation@gmail.com" className="flex items-center justify-center md:justify-end gap-2 hover:text-white transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>sta.southend@gmail.com</span>
+                <span>southendteluguassociation@gmail.com</span>
               </a>
-              <a href="tel:+447123456789" className="flex items-center justify-center md:justify-end gap-2 hover:text-white transition-colors">
+              <a href="tel:+4474490445130" className="flex items-center justify-center md:justify-end gap-2 hover:text-white transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+44 7123 456789</span>
+                <span>+44 (0) 7449044513</span>
               </a>
             </div>
           </div>
