@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Facebook, Instagram, MessageCircle, Youtube } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -59,13 +59,16 @@ export const Contact = () => {
               <h3 className="text-xl font-bold text-white">Follow Us</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Facebook, href: "#", color: "hover:bg-blue-600" },
-                  { icon: Instagram, href: "#", color: "hover:bg-pink-600" },
-                  { icon: Twitter, href: "#", color: "hover:bg-sky-600" },
+                  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61558150487748", color: "hover:bg-blue-600" },
+                  { icon: Instagram, href: "https://www.instagram.com/southendteluguassociation", color: "hover:bg-pink-600" },
+                  { icon: MessageCircle, href: "https://wa.me/447123456789", color: "hover:bg-green-600" },
+                  { icon: Youtube, href: "https://www.youtube.com/@southendteluguassociation", color: "hover:bg-red-600" },
                 ].map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 ${social.color} transition-all duration-300 hover:scale-110 group`}
                   >
                     <social.icon className="w-6 h-6 text-white" />
