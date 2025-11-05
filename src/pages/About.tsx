@@ -8,7 +8,7 @@ import { Users, Target, Heart, Award } from "lucide-react";
 const admins = [
   { name: "Sravan Dommaraju", role: "Committee Member", image: "/sleek-web-3d/admin-images/sravan.webp" },
   { name: "Balaji Callur", role: "Committee Member", image: "/sleek-web-3d/admin-images/balaji.webp" },
-  { name: "Sirish Raj naddinuri", role: "Committee Member", image: "/sleek-web-3d/admin-images/sirish.webp" },
+  { name: "Sirish Raj Naddinuri", role: "Committee Member", image: "/sleek-web-3d/admin-images/sirish.webp" },
   { name: "Dr Srikanth", role: "Committee Member", image: "/sleek-web-3d/admin-images/srikanth.webp" },
   { name: "Sunil", role: "Committee Member", image: "/sleek-web-3d/admin-images/sunil.webp" },
   { name: "Rupesh", role: "Committee Member", image: "/sleek-web-3d/admin-images/rupesh.webp" },
