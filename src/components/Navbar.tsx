@@ -21,7 +21,10 @@ export const Navbar = () => {
   };
 
   const handleNavClick = (path: string) => {
-    if (path.includes("#")) {
+    if (path === "/") {
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (path.includes("#")) {
       const [route, hash] = path.split("#");
       if (location.pathname !== route) {
         navigate(route);
@@ -86,39 +89,21 @@ export const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
-              item.path.includes("#") ? (
-                <Button
-                  key={item.path}
-                  variant="ghost"
-                  onClick={() => handleNavClick(item.path)}
-                  className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
-                    isActive(item.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground hover:text-primary hover:bg-muted"
-                  }`}
-                >
-                  {item.name}
-                  {isActive(item.path) && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-primary via-primary-glow to-secondary rounded-full" />
-                  )}
-                </Button>
-              ) : (
-                <Link key={item.path} to={item.path}>
-                  <Button
-                    variant="ghost"
-                    className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
-                      isActive(item.path)
-                        ? "text-primary bg-primary/10"
-                        : "text-foreground hover:text-primary hover:bg-muted"
-                    }`}
-                  >
-                    {item.name}
-                    {isActive(item.path) && (
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-primary via-primary-glow to-secondary rounded-full" />
-                    )}
-                  </Button>
-                </Link>
-              )
+              <Button
+                key={item.path}
+                variant="ghost"
+                onClick={() => handleNavClick(item.path)}
+                className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                  isActive(item.path)
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:text-primary hover:bg-muted"
+                }`}
+              >
+                {item.name}
+                {isActive(item.path) && (
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-primary via-primary-glow to-secondary rounded-full" />
+                )}
+              </Button>
             ))}
             <Button 
               onClick={handleJoinNow} 
@@ -143,37 +128,18 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-6 space-y-3 animate-fade-in border-t border-border/50">
             {navItems.map((item) => (
-              item.path.includes("#") ? (
-                <Button
-                  key={item.path}
-                  variant="ghost"
-                  onClick={() => handleNavClick(item.path)}
-                  className={`w-full justify-start text-base font-medium transition-all duration-300 rounded-lg ${
-                    isActive(item.path)
-                      ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary"
-                      : "text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {item.name}
-                </Button>
-              ) : (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Button
-                    variant="ghost"
-                    className={`w-full justify-start text-base font-medium transition-all duration-300 rounded-lg ${
-                      isActive(item.path)
-                        ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary"
-                        : "text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    {item.name}
-                  </Button>
-                </Link>
-              )
+              <Button
+                key={item.path}
+                variant="ghost"
+                onClick={() => handleNavClick(item.path)}
+                className={`w-full justify-start text-base font-medium transition-all duration-300 rounded-lg ${
+                  isActive(item.path)
+                    ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary"
+                    : "text-foreground hover:bg-muted"
+                }`}
+              >
+                {item.name}
+              </Button>
             ))}
             <Button 
               onClick={handleJoinNow} 
