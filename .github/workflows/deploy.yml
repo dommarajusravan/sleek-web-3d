@@ -8,42 +8,34 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write  # required for deploy-pages@v1
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # Build the Vite app
       - name: Build app
         run: npm run build
 
-      # Copy index.html to 404.html for SPA routing
-      - name: Copy 404.html
+      - name: Copy 404.html for SPA routing
         run: cp dist/index.html dist/404.html
 
-      # Upload build artifact for GitHub Pages
-      - name: Upload artifact for GitHub Pages
+      - name: Upload artifact for Pages deployment
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
 
