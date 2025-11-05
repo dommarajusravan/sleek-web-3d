@@ -3,23 +3,23 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Deploy whenever code is pushed to main
+      - main
 
 permissions:
   contents: read
   pages: write
-  id-token: write  # Required for deploy-pages@v4
+  id-token: write  # required for deploy-pages@v1
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Set up Node.js
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -29,16 +29,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build the app
+      # 4️⃣ Build the Vite app
       - name: Build app
         run: npm run build
 
       # 5️⃣ Copy index.html to 404.html for SPA routing
-      - name: Copy 404.html for SPA routing
+      - name: Copy 404.html
         run: cp dist/index.html dist/404.html
 
       # 6️⃣ Upload build artifact for Pages deployment
-      - name: Upload artifact
+      - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
