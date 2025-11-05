@@ -1,31 +1,39 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # or master, whatever your default branch is
+      - main  # Deploy whenever code is pushed to main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      # 4️⃣ Build the app
+      - name: Build app
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      # 5️⃣ Copy index.html to 404.html for SPA routing
+      - name: Copy 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
 
+      # 6️⃣ Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          folder: dist
