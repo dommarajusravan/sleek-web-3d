@@ -1,4 +1,4 @@
-name: Build & Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -11,32 +11,40 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment: github-pages  # ← Required for deploy-pages@v4
 
     steps:
-      - name: Checkout repo
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Install deps
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
         run: npm ci
 
+      # 4️⃣ Build Vite app
       - name: Build app
         run: npm run build
 
-      - name: Copy 404.html for SPA routing
+      # 5️⃣ Copy 404.html for SPA routing
+      - name: Copy 404.html
         run: cp dist/index.html dist/404.html
 
-      - name: Upload pages artifact
+      # 6️⃣ Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
+      # 7️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
 
