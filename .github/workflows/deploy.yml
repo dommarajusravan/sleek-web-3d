@@ -15,34 +15,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build the Vite app
+      # Build the Vite app
       - name: Build app
         run: npm run build
 
-      # 5️⃣ Copy index.html to 404.html for SPA routing
+      # Copy index.html to 404.html for SPA routing
       - name: Copy 404.html
         run: cp dist/index.html dist/404.html
 
-      # 6️⃣ Upload build artifact for Pages deployment
+      # Upload build artifact for GitHub Pages
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
-      # 7️⃣ Deploy to GitHub Pages
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
+
