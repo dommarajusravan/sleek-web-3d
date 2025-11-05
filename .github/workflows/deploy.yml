@@ -15,27 +15,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4️⃣ Build app
       - name: Build app
         run: npm run build
 
-      - name: Copy 404.html for SPA routing
+      # 5️⃣ Copy index.html to 404.html for SPA routing
+      - name: Copy 404.html
         run: cp dist/index.html dist/404.html
 
-      - name: Upload artifact for Pages deployment
+      # 6️⃣ Upload Pages artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist
+          path: dist
 
+      # 7️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
 
