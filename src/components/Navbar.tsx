@@ -34,6 +34,8 @@ export const Navbar = () => {
       } else {
         document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      navigate(path);
     }
     setIsOpen(false);
   };
