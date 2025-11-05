@@ -5,6 +5,11 @@ on:
     branches:
       - main  # Deploy whenever code is pushed to main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write  # Required for deploy-pages@v4
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -32,8 +37,12 @@ jobs:
       - name: Copy 404.html for SPA routing
         run: cp dist/index.html dist/404.html
 
-      # 6️⃣ Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      # 6️⃣ Upload build artifact for Pages deployment
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: dist
+          path: ./dist
+
+      # 7️⃣ Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
