@@ -3,7 +3,7 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # deploy when main branch is updated
 
 permissions:
   contents: read
@@ -15,35 +15,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build app
+      # Build the Vite app
       - name: Build app
         run: npm run build
 
-      # 5️⃣ Copy index.html to 404.html for SPA routing
+      # Copy 404.html for SPA routing
       - name: Copy 404.html
         run: cp dist/index.html dist/404.html
 
-      # 6️⃣ Upload Pages artifact
-      - name: Upload Pages artifact
+      # Upload artifact for GitHub Pages deployment
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: dist
+          path: ./dist
 
-      # 7️⃣ Deploy to GitHub Pages
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
 
