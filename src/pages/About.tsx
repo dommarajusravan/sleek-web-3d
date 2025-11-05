@@ -7,15 +7,15 @@ import { Users, Target, Heart, Award } from "lucide-react";
 // Admin/Committee members data
 const admins = [
   { name: "Sravan Dommaraju", role: "Committee Member", image: "/sleek-web-3d/admin-images/sravan.webp" },
-  { name: "Balaji", role: "Committee Member", image: "/sleek-web-3d/admin-images/balaji.webp" },
-  { name: "Srihari", role: "Committee Member", image: "/sleek-web-3d/admin-images/srihari.webp" },
+  { name: "Balaji Callur", role: "Committee Member", image: "/sleek-web-3d/admin-images/balaji.webp" },
+  { name: "Sirish Raj naddinuri", role: "Committee Member", image: "/sleek-web-3d/admin-images/sirish.webp" },
   { name: "Dr Srikanth", role: "Committee Member", image: "/sleek-web-3d/admin-images/srikanth.webp" },
   { name: "Sunil", role: "Committee Member", image: "/sleek-web-3d/admin-images/sunil.webp" },
   { name: "Rupesh", role: "Committee Member", image: "/sleek-web-3d/admin-images/rupesh.webp" },
   { name: "Nandu", role: "Committee Member", image: "/sleek-web-3d/admin-images/nandu.webp" },
   { name: "Bramha", role: "Committee Member", image: "/sleek-web-3d/admin-images/bramha.webp" },
-  { name: "Naveen", role: "Committee Member", image: "/sleek-web-3d/admin-images/naveen.webp" },
-  { name: "Karunakar Reddy", role: "Committee Member", image: "/sleek-web-3d/admin-images/karna.webp" },
+  { name: "Naveen Kaluvala", role: "Committee Member", image: "/sleek-web-3d/admin-images/naveen.webp" },
+  { name: "Karunakar Reddy Gruddanti", role: "Committee Member", image: "/sleek-web-3d/admin-images/karna.webp" },
 ];
 
 const values = [
