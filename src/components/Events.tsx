@@ -11,7 +11,7 @@ const events = [
     time: "11:00 AM - 6:00 PM",
     location: "Runnymede Hall",
     description: "Let this Sankranti bring harmony, wealth, and endless reasons to smile.",
-    image: "/images/sankranthi-2026.png",
+    image: "@/assets/images/sankranthi-2026.png",
     color: "from-orange-500 to-amber-600",
   },
   {
@@ -20,7 +20,7 @@ const events = [
     time: "11:00 AM - 6:00 PM",
     location: "Cromwell Manor, Pitsea, Basildon",
     description: "Join us for a fun-filled summer celebration with barbecue, biryani, games, mini cricket for kids, and many more exciting activities for the whole family",
-    image: "/images/summer-party-2025.png",
+    image: "@/assets/images/summer-party-2025.png",
     color: "from-cyan-500 to-blue-600",
   },
   {
@@ -29,7 +29,7 @@ const events = [
     time: "12:00 PM - 4:00 PM",
     location: "Shoeburyness Leisure Center",
     description: "Exciting badminton tournament for women and kids featuring doubles matches. Entry £5 per person. Organized by STA Women's Team",
-    image: "/images/badminton-2025.png",
+    image: "@/assets/images/badminton-2025.png",
     color: "from-blue-500 to-pink-600",
   },
   {
@@ -38,7 +38,7 @@ const events = [
     time: "11:00 AM onwards",
     location: "Runnymede Hall, Kiln Rd, Thundersley",
     description: "Welcome the Telugu New Year with Ugadi pachadi, cultural programs, traditional folk dances, and celebrations. Mother's Day Special: Moms get tickets at kid's prices!",
-    image: "/images/ugadi-2025.png",
+    image: "@/assets/images/ugadi-2025.png",
     color: "from-purple-500 to-pink-600",
   },
   {
@@ -47,7 +47,7 @@ const events = [
     time: "11:00 AM - 6:00 PM",
     location: "Runnymede Hall, Kiln Rd, Thundersley",
     description: "Celebrate the harvest festival Sankranthi with traditional muggu (rangoli), bogillu (bonfire), cultural programs, delicious food, and family entertainment",
-    image: "/images/sankranthi-2025.jpg",
+    image: "@/assets/images/sankranthi-2025.jpg",
     color: "from-orange-500 to-yellow-600",
   },
 ];
