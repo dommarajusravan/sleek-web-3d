@@ -70,7 +70,7 @@ export const Navbar = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20 blur-xl group-hover:opacity-30 transition-opacity rounded-full" />
               <img 
-                src="@/assets/images/STA-logo.webp" 
+                src="/sleek-web-3d/images/STA-logo.webp" 
                 alt="STA Logo" 
                 className="w-16 h-16 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
               />

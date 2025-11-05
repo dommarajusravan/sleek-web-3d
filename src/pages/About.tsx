@@ -6,16 +6,16 @@ import { Users, Target, Heart, Award } from "lucide-react";
 
 // Admin/Committee members data
 const admins = [
-  { name: "Sravan Dommaraju", role: "Committee Member", image: "@/assets/admin-images/sravan.webp" },
-  { name: "Balaji", role: "Committee Member", image: "@/assets/admin-images/balaji.webp" },
-  { name: "Srihari", role: "Committee Member", image: "@/assets/admin-images/srihari.webp" },
-  { name: "Dr Srikanth", role: "Committee Member", image: "@/assets/admin-images/srikanth.webp" },
-  { name: "Sunil", role: "Committee Member", image: "@/assets/admin-images/sunil.webp" },
-  { name: "Rupesh", role: "Committee Member", image: "@/assets/admin-images/rupesh.webp" },
-  { name: "Nandu", role: "Committee Member", image: "@/assets/admin-images/nandu.webp" },
-  { name: "Bramha", role: "Committee Member", image: "@/assets/admin-images/bramha.webp" },
-  { name: "Naveen", role: "Committee Member", image: "@/assets/admin-images/naveen.webp" },
-  { name: "Karunakar Reddy", role: "Committee Member", image: "@/assets/admin-images/karna.webp" },
+  { name: "Sravan Dommaraju", role: "Committee Member", image: "/sleek-web-3d/admin-images/sravan.webp" },
+  { name: "Balaji", role: "Committee Member", image: "/sleek-web-3d/admin-images/balaji.webp" },
+  { name: "Srihari", role: "Committee Member", image: "/sleek-web-3d/admin-images/srihari.webp" },
+  { name: "Dr Srikanth", role: "Committee Member", image: "/sleek-web-3d/admin-images/srikanth.webp" },
+  { name: "Sunil", role: "Committee Member", image: "/sleek-web-3d/admin-images/sunil.webp" },
+  { name: "Rupesh", role: "Committee Member", image: "/sleek-web-3d/admin-images/rupesh.webp" },
+  { name: "Nandu", role: "Committee Member", image: "/sleek-web-3d/admin-images/nandu.webp" },
+  { name: "Bramha", role: "Committee Member", image: "/sleek-web-3d/admin-images/bramha.webp" },
+  { name: "Naveen", role: "Committee Member", image: "/sleek-web-3d/admin-images/naveen.webp" },
+  { name: "Karunakar Reddy", role: "Committee Member", image: "/sleek-web-3d/admin-images/karna.webp" },
 ];
 
 const values = [
