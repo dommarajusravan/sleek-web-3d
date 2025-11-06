@@ -16,11 +16,11 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
             <div className="space-y-2 text-white/70 text-sm">
               <a href="mailto:southendteluguassociation@gmail.com" className="flex items-center justify-center md:justify-end gap-2 hover:text-white transition-colors">
-                <Mail className="w-4 h-4" />
-                <span>southendteluguassociation@gmail.com</span>
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span className="break-all">southendteluguassociation@gmail.com</span>
               </a>
               <a href="tel:+4474490445130" className="flex items-center justify-center md:justify-end gap-2 hover:text-white transition-colors">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 flex-shrink-0" />
                 <span>+44 (0) 7449044513</span>
               </a>
             </div>

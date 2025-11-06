@@ -50,14 +50,14 @@ export default function About() {
       if (!gallery) return;
 
       const items = Array.from(gallery.querySelectorAll(".admin-item")) as HTMLElement[];
-      const imageSize = window.innerWidth < 768 ? 140 : 180;
-      const margin = window.innerWidth < 768 ? 30 : 50;
+      const imageSize = window.innerWidth < 640 ? 130 : window.innerWidth < 768 ? 150 : 180;
+      const margin = window.innerWidth < 640 ? 40 : window.innerWidth < 768 ? 50 : 60;
       const positions: { x: number; y: number }[] = [];
 
       // Increase height to provide more space
-      const cols = window.innerWidth < 768 ? 2 : 3;
+      const cols = window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 3 : 4;
       const rows = Math.ceil(items.length / cols);
-      const estimatedHeight = Math.max(1200, rows * (imageSize + margin * 3));
+      const estimatedHeight = Math.max(1400, rows * (imageSize + margin * 4));
       gallery.style.minHeight = `${estimatedHeight}px`;
 
       const minX = margin;

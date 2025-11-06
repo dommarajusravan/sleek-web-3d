@@ -66,21 +66,21 @@ export const Navbar = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 group">
-            <div className="relative">
+          <Link to="/" className="flex items-center gap-2 sm:gap-4 group">
+            <div className="relative flex-shrink-0">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20 blur-xl group-hover:opacity-30 transition-opacity rounded-full" />
               <img 
                 src="/sleek-web-3d/images/STA-logo.webp" 
                 alt="STA Logo" 
-                className="w-16 h-16 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div className="hidden lg:flex flex-col justify-center items-center gap-1">
-              <div className="font-bold text-sm tracking-wider text-foreground group-hover:text-primary transition-colors leading-tight">
+            <div className="flex flex-col justify-center gap-0.5 sm:gap-1 min-w-0">
+              <div className="font-bold text-[10px] sm:text-xs lg:text-sm tracking-wider text-foreground group-hover:text-primary transition-colors leading-tight truncate">
                 SOUTHEND TELUGU ASSOCIATION
               </div>
               <div 
-                className="text-lg font-semibold text-secondary group-hover:text-secondary-glow transition-colors leading-tight tracking-wider" 
+                className="text-sm sm:text-base lg:text-lg font-semibold text-secondary group-hover:text-secondary-glow transition-colors leading-tight tracking-wider truncate" 
                 style={{ fontFamily: 'Noto Sans Telugu, sans-serif' }}
               >
                 సౌతెండ్ తెలుగు అసోసియేషన్

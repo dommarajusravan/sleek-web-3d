@@ -34,11 +34,11 @@ export const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            <span className="whitespace-nowrap bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight px-4">
+            <span className="block bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
               Southend Telugu Association
             </span>
-            <span className="block mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
+            <span className="block mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-orange-500">
               సౌతెండ్ తెలుగు అసోసియేషన్
             </span>
           </h1>
