@@ -46,9 +46,9 @@ export const Contact = () => {
                   <div className="p-3 rounded-xl bg-white/20 group-hover:bg-white/30 transition-colors">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <div className="text-sm text-white/70 font-medium">{item.title}</div>
-                    <div className="text-white font-semibold">{item.content}</div>
+                    <div className="text-white font-semibold break-all">{item.content}</div>
                   </div>
                 </a>
               ))}
