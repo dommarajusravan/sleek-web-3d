@@ -25,49 +25,49 @@ const galleryImages: GalleryImage[] = [
     src: ugadi1_2025,
     title: "Ugadi 2025",
     event: "Ugadi Celebrations",
-    link: "https://www.southendteluguassociation.org/event-images/ugadi-1-2025.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: ugadi2_2025,
     title: "Ugadi 2025",
     event: "Ugadi Celebrations",
-    link: "https://www.southendteluguassociation.org/event-images/ugadi-2-2025.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: sankranthi1_2025,
     title: "Sankranthi 2025",
     event: "Sankranthi Festival",
-    link: "https://www.southendteluguassociation.org/event-images/sankranthi-1-2025.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: sankranthi2_2025,
     title: "Sankranthi 2025",
     event: "Sankranthi Festival",
-    link: "https://www.southendteluguassociation.org/event-images/sankranthi-2-2025.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: sankranthi3_2025,
     title: "Sankranthi 2025",
     event: "Sankranthi Festival",
-    link: "https://www.southendteluguassociation.org/event-images/sankranthi-3-2025.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: ugadi1_2024,
     title: "Ugadi 2024",
     event: "Ugadi Celebrations",
-    link: "https://www.southendteluguassociation.org/event-images/ugadi-1-2024.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: ugadi2_2024,
     title: "Ugadi 2024",
     event: "Ugadi Celebrations",
-    link: "https://www.southendteluguassociation.org/event-images/ugadi-2-2024.webp",
+    link: "https://www.gallery.snapu.photography",
   },
   {
     src: ugadi3_2024,
     title: "Ugadi 2024",
     event: "Ugadi Celebrations",
-    link: "https://www.southendteluguassociation.org/event-images/ugadi-3-2024.webp",
+    link: "https://www.gallery.snapu.photography",
   },
 ];
 
@@ -104,10 +104,11 @@ export const EventsGallery = () => {
                 <img
                   src={image.src}
                   alt={image.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                {/* Overlay - Always visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4">
                   <p className="text-white text-sm font-medium mb-1">{image.event}</p>
                   <p className="text-white/80 text-xs">{image.title}</p>
                   <a
@@ -117,7 +118,7 @@ export const EventsGallery = () => {
                     className="mt-2 inline-flex items-center gap-1 text-white text-xs hover:text-primary transition-colors"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    View Full Size <ExternalLink className="w-3 h-3" />
+                    View Gallery <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </div>
@@ -134,6 +135,7 @@ export const EventsGallery = () => {
               <img
                 src={selectedImage.src}
                 alt={selectedImage.title}
+                loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-6 bg-background">
@@ -145,7 +147,7 @@ export const EventsGallery = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary hover:underline"
                 >
-                  View Original Image <ExternalLink className="w-4 h-4" />
+                  View Full Gallery <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
